@@ -3,7 +3,7 @@ const mongoose = require ('mongoose');
 const app = express ();
 require('dotenv').config()
 const db = mongoose.connection;
-
+const cors = require('cors')
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -20,9 +20,8 @@ app.use(express.json());
 
 
 
-app.get('/' , (req, res) => {
-  res.send('F this!');
-});
+const groceryController = require('./controllers/grocery.js')
+app.use('/groceries', groceryController)
 
 
 
