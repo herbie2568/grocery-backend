@@ -19,6 +19,9 @@ app.use(cors())
 const groceryController = require('./controllers/grocery.js')
 app.use('/groceries', groceryController)
 
+const reviewsController = require('./controllers/reviews.js')
+app.use('/reviews', reviewsController)
+
 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
