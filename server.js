@@ -22,6 +22,11 @@ app.use('/groceries', groceryController)
 const reviewsController = require('./controllers/reviews.js')
 app.use('/reviews', reviewsController)
 
+const loginController = require('./controllers/login.js')
+app.use('/login', loginController)
+
+
+
 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
