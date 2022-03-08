@@ -10,6 +10,7 @@ const db = mongoose.connection;
 const groceryController = require('./controllers/grocery.js')
 const reviewsController = require('./controllers/reviews.js')
 const userController = require('./controllers/users.js')
+const cartController = require('./controllers/cart.js')
 
 
 const PORT = process.env.PORT || 3000;
@@ -41,6 +42,7 @@ const isAuthenticated = (req, res, next) => {
 app.use('/users', userController)
 app.use('/groceries', groceryController)
 app.use('/reviews', reviewsController)
+app.use('/cart', cartController)
 
 app.get('/' , (req, res) => {
   res.send('Hello World!');
